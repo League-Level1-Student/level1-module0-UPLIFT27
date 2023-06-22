@@ -44,71 +44,92 @@ import processing.core.PImage;
  *    text("Score: " + score, 20, 20);
  */
 public class RainGame extends PApplet {
-    static final int WIDTH = 600;
-    static final int HEIGHT = 600;
+	static final int WIDTH = 600;
+	static final int HEIGHT = 600;
 
-    int score = 0;
-    int bucketWidth = 50;
-    int bucketHeight;
-    PImage bucket;
-    int y=50;
-    int x=300;
-	Random ran = new Random();	
-    
-    
-    
-    
-    // Sets the size of your canvas
-    @Override
-    public void settings() {
-        size(WIDTH, HEIGHT);
-    }
+	int score = 0;
+	int bucketWidth = 100;
+	int bucketHeight = 40;
+	PImage bucket;
+	int y = 50;
+	int x = 300;
+	int randomNumber = (int) random(width);
 
-    @Override
-    public void setup() {
-    
-    
+	// Sets the size of your canvas
+	@Override
+	public void settings() {
+		size(WIDTH, HEIGHT);
+	}
 
-    }
+	@Override
+	public void setup() {
 
-    
-    
-    @Override
-    public void draw() {
+	}
 
-    
-    	
-     
-    	
-    	background(0, 0, 0);
-    	
-    	
-    	
-    	fill(51,153,255);
-    	
-    	ellipse(x,y,30,50);
-    	ellipse(x,y+10,40,40);
-    
-   for(int i=0;i<=600;i++)
-   {
-	   y+=1;
-   }
-   x= ran.nextInt(600); 	
-    	
-    }
+	@Override
+	public void draw() {
 
-    static public void main(String[] args) {
-        PApplet.main(RainGame.class.getName());
-    }
-    
-    /*********************** DO NOT MODIFY THE CODE BELOW ********************/
+		background(0, 0, 0);
 
-    void checkCatch(int x) {
-        if (x > mouseX && x < mouseX + bucketWidth) {
-            score++;
-        } else if (score > 0) {
-            score--;
-        }
-        println("Your score is now: " + score);
-    }
+		fill(51, 153, 255);
+
+		ellipse(x, y, 30, 50);
+		ellipse(x, y + 10, 40, 40);
+
+		fill(255, 255, 255);
+		rect(mouseX, 550, 100, 40);
+
+		
+		if(score<5)
+		{
+		y += 2;
+		}
+		
+		else if(score>=5&&score<10)
+		{
+			y+=5;
+		}
+		else if(score>=10&&score<15)
+		{
+			y+=10;
+		}
+		else
+		{
+			y+=50;
+		}
+		
+		
+		
+		
+		
+		
+		if (y >= 570) {
+			checkCatch(x);
+			randomNumber= (int) random(width);
+			y = 50;
+			x = randomNumber;
+
+		}
+		
+		
+		
+		
+		
+
+	}
+
+	static public void main(String[] args) {
+		PApplet.main(RainGame.class.getName());
+	}
+
+	/*********************** DO NOT MODIFY THE CODE BELOW ********************/
+
+	void checkCatch(int x) {
+		if (x > mouseX && x < mouseX + bucketWidth) {
+			score++;
+		} else if (score > 0) {
+			score--;
+		}
+		println("Your score is now: " + score);
+	}
 }
