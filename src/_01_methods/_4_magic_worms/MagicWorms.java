@@ -32,7 +32,10 @@ import processing.core.PApplet;
 public class MagicWorms extends PApplet {
     static final int WIDTH = 600;
     static final int HEIGHT = 400;
-
+    float x=0;
+    float y=0;
+ int three = 300;
+    
     @Override
     public void settings() {
         size(WIDTH, HEIGHT);
@@ -41,11 +44,37 @@ public class MagicWorms extends PApplet {
     @Override
     public void setup() {
 
+    	
+    	
+    	
     }
 
     @Override
     public void draw() {
-
+    	
+    	
+   makeMagical();
+   for(int i=0; i<three; i++)
+   {
+    
+	   
+	   if(mousePressed)
+	   {
+		   three++;
+	   }
+	   
+	   
+x =	getWormX(i);
+y =	getWormY(i);
+    
+fill(255,0,0);
+    ellipse(x,y,10,10);
+ 
+   
+   
+   } 	
+    	
+    	
     }
 
     static public void main(String[] args) {
