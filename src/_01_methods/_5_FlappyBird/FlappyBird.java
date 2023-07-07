@@ -8,15 +8,15 @@ public class FlappyBird extends PApplet {
 	static final int WIDTH = 800;
 	static final int HEIGHT = 600;
 	int birdX = 30;
-	int birdY = 300;
+	int birdY = 100;
 	int birdYVelocity = -10;
 	int gravity = 1;
-	int pipeX = 200;
-	int pipegap = 80;
-	int upperPipeHeight = (int) random(100, 200);
+	int pipeX = (int) random(100,700);
+	int pipegap = 200;
+	int upperPipeHeight = (int) random(100, 300);
 	int pipeWidth = 100;
-	int lowerPipeTop;
-	
+	int lowerPipeTop =  upperPipeHeight+ pipegap;
+	int score=0;
 	@Override
 	public void settings() {
 		size(WIDTH, HEIGHT);
@@ -48,31 +48,44 @@ public class FlappyBird extends PApplet {
 		rect(pipeX, 0, pipeWidth, upperPipeHeight);
 
 		
+		
 
 	
 
-		rect(pipeX, lowerPipeTop, pipeWidth, 500);
-
+		fill(34,138,35);
+		rect(0,540, 800,70);
+		
+		
+		fill(0,255,0);
+		rect(pipeX, lowerPipeTop, pipeWidth, 325);
+		
+		
 		pipeX--;
 
+		
+		
 		teleportPipes();
+		
 		if(intersectsPipes())
 		{
 			JOptionPane.showMessageDialog(null, "game over");
-		
+		JOptionPane.showMessageDialog(null, score);
 			
 		}
-
+	
+		
 	}
 
 	public void teleportPipes() {
-		int randomNumber = (int) random(width);
+		int randomNumber = (int) random(800);
 
 		if (pipeX == -90) {
 			pipeX = randomNumber;
-			lowerPipeTop =  upperPipeHeight -pipegap;
 			
-		
+			score++;
+			
+			fill(0,0,0);
+			text(score, 750, 50); 
 		}
 
 	}
