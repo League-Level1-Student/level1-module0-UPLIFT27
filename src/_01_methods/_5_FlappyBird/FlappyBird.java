@@ -63,30 +63,40 @@ public class FlappyBird extends PApplet {
 		pipeX--;
 
 		
-		
+		if (pipeX == -90) {
 		teleportPipes();
+		}
 		
 		if(intersectsPipes())
 		{
-			JOptionPane.showMessageDialog(null, "game over");
-		JOptionPane.showMessageDialog(null, score);
+			JOptionPane.showMessageDialog(null, "game over  your score was "+score);
 			
 		}
+		if(birdY>=570)
+		{
+			JOptionPane.showMessageDialog(null, "game over  your score was "+score);
+			
+		}
+		
 	
 		
 	}
 
 	public void teleportPipes() {
 		int randomNumber = (int) random(800);
+		int random = (int) random(400);
 
-		if (pipeX == -90) {
+		
+		
 			pipeX = randomNumber;
+			upperPipeHeight = random;
+			lowerPipeTop =  upperPipeHeight+ pipegap;
 			
 			score++;
 			
 			fill(0,0,0);
 			text(score, 750, 50); 
-		}
+		
 
 	}
 
