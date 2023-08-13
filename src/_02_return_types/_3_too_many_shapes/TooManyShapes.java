@@ -37,13 +37,12 @@ String shapes = JOptionPane.showInputDialog("How many shapes do you want your sh
 		
 		drawPolygons(side,shape,angle);
 		}
-		//7. If the shape CANNOT be drawn 
-
-			
+		//7. If the shape CANNOT be drawn 		
 			//8. Call notEnoughSides() and print out what is returned 	
 		else
 		{
-			notEnoughSides();
+		System.out.print(notEnoughSides());
+		
 		}
 		
 		

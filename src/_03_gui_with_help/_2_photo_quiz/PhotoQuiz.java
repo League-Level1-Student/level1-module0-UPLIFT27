@@ -26,10 +26,16 @@ public class PhotoQuiz {
 		// 1. find an image on the internet, and put its URL in a String
 		// variable (from your browser, right click on the image, and select
 		// “Copy Image Address” )
-
+String picture = "https://t3.gstatic.com/licensed-image?q=tbn:ANd9GcTNwWdVLoWRgaRzoyctQn8vnWiU_pUFth_L6AmYDVwfWXLwUloDa6j4VFYNT5AwZBEy";
 		// 2. create a variable of type "Component" that will hold your image
 
+
+
+
+		Component comp = new Component();
 		// 3. use the "createImage()" method below to initialize your Component
+
+		createImage();
 
 		// 4. add the image to the quiz window
 
@@ -39,13 +45,31 @@ public class PhotoQuiz {
 
 		// 7. print "CORRECT" if the user gave the right answer
 
+		
+		if(right)
+		{
+			System.out.print("CORRECT");
+		}
+		
+		
+		
+		
 		// 8. print "INCORRECT" if the answer is wrong
 
+		else
+		{
+			System.out.print("INCORRECT");
+		}
+		
+		
 		// 9. remove the component from the quiz window (you may not see the
 		// effect of this until step 12)
 
 		// 10. find another image and create it (might take more than one line
 		// of code)
+		
+		
+		
 
 		// 11. add the second image to the quiz window
 
@@ -55,6 +79,10 @@ public class PhotoQuiz {
 
 		// 14+ check answer, say if correct or incorrect, etc.
 
+		
+		
+		
+		
 	}
 
 	private Component createImage(String imageUrl) {
