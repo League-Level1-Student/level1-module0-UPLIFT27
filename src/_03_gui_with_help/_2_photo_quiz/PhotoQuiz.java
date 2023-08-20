@@ -49,10 +49,11 @@ String flavor =JOptionPane.showInputDialog("what flavor is the icecream");
 		
 int score=0;
 
-		if(flavor == "Vanilla" || flavor == "vanilla" )
+		if(flavor.equals("Vanilla") || flavor.equals("vanilla") )
 		{
-			JOptionPane.showMessageDialog(null,"CORRECT your score is "+score);
 			score++;
+			JOptionPane.showMessageDialog(null,"CORRECT your score is "+ score);
+
 		
 		}
 		
@@ -94,7 +95,7 @@ String car =JOptionPane.showInputDialog("what is the is the brand of this car");
 
 
 
-if(car == "tesla" || car == "Tesla" )
+if(car.equals("tesla") || car.equals("Tesla"))
 {
 	JOptionPane.showMessageDialog(null,"CORRECT, your score is "+score);
 	score++;
