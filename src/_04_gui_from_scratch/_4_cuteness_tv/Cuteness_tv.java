@@ -2,12 +2,13 @@ package _04_gui_from_scratch._4_cuteness_tv;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URI;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class Cutenesstv implements ActionListener{
+public class Cuteness_tv implements ActionListener{
 	
 	JFrame frame = new JFrame();
 	JPanel panel = new JPanel();
@@ -17,16 +18,30 @@ public class Cutenesstv implements ActionListener{
 	
 	
 	
-	public Cutenesstv()
+	public Cuteness_tv()
 	{
-	frame.add(panel);
+	
 	
 	frame.setVisible(true);
-	
-		panel.add(Button);
+	Unicorn.setText("Unicorn");
+		
+		Frog.setText("Frog");
+		panel.add(Frog);
+		Frog.addActionListener(this);
+		
+		Unicorn.setText("Unicorn");
+		panel.add(Unicorn);
+		Unicorn.addActionListener(this);
+		
+		Duck.setText("Duck");
+		panel.add(Duck);
+		Duck.addActionListener(this);
+		
+		frame.add(panel);	
 		
 		
-		Button.addActionListener(this);
+		
+		frame.pack();
 	}
 	
 	
@@ -70,25 +85,24 @@ public class Cutenesstv implements ActionListener{
 		
 
 		if (buttonPressed == Unicorn) {
+			System.out.println("Unicorn");
+			showFluffyUnicorns();
 
-			
-
-				showFluffyUnicorns();
 			}
 		else if (buttonPressed == Frog) {
 
-			
+			System.out.println("Frog");
 
 			showFluffyUnicorns();
 		}
 		else if (buttonPressed == Duck) {
-
+			System.out.println("Duck");
 			
 
 			showDucks();
 		}
 
-		}
+		
 
 		frame.pack();
 	}
